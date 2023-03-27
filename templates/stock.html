@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="display: flex;">
+    <table class = "tableStock" border="1" style = "flex-basis: 80%;">
+    <tr>
+        <th>Sản phẩm</th>
+        <th>Nhập</th>
+        <th>Xác nhận</th>
+        <th>Đang có</th>
+    </tr>
+    <tr>
+        <td>
+            <a href="/pickup/plus/item1"><img src ="{{ url_for('static', filename='images/coca.jpg') }}" 
+                                title="Sting" width="auto" height="100px"></a>
+            <a href ="/stock/item1/plus"><button class="buttonPlus">+</button></a>
+            <a href ="/stock/item1/minus"><button class="buttonMinus">-</button></a>
+        </td>
+        <td>{{input1}}</td>
+        <td><a href ="/stock"><button class="buttonCancel">Submit</button></a></td>
+        <td>{{id_1.stock}}</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/pickup/plus/item2"><img src ="{{ url_for('static', filename='images/pepsi.jpg') }}" 
+                                title="pepsi" width="auto" height="100px"></a>
+            <a href ="/stock/item2/plus"><button class="buttonPlus">+</button></a>
+            <a href ="/stock/item2/minus"><button class="buttonMinus">-</button></a>
+        </td>
+        <td>{{input2}}</td>
+        <td><a href ="/stock"><button class="buttonCancel">Submit</button></a></td>
+        <td>{{id_2.stock}}</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/pickup/plus/item3"><img src ="{{ url_for('static', filename='images/haohao.jpg') }}" 
+                                title="Mitom" width="auto" height="100px"></a>
+            <a href ="/stock/item3/plus"><button class="buttonPlus">+</button></a>
+            <a href ="/stock/item3/minus"><button class="buttonMinus">-</button></a>
+        </td>
+        <td>{{input3}}</td>
+        <td><a href ="/stock"><button class="buttonCancel">Submit</button></a></td>
+        <td>{{id_3.stock}}</td>
+    </tr>
+</table>
+ <a href="/"><img src ="{{ url_for('static', filename='images/homepage.png') }}" 
+                                title="home" width="auto" height="100px"></a>
+</body>
+</html>

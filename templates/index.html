@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Máy bán hàng tự động</title>
+</head>
+<body>
+        <div id="header">
+            <div class="headTitle">
+                <div class="imgHead">
+                  <img src="https://inkythuatso.com/uploads/images/2021/11/logo-tdtu-inkythuatso-01-25-14-39-31.jpg"  width="auto" height=100px">
+                 </div>
+                 <div class="head1">
+                     <h1>
+                          THIẾT KẾ, THI CÔNG VÀ ĐIỀU KHIỂN MÁY BÁN HÀNG TỰ ĐỘNG
+                      </h1>
+                      <h2>
+                          SVTH: CAO TRỌNG KỶ – GVHD: TS. TRẦN ĐỨC ANH MINH
+                      </h2>
+                      <h3>
+                          Bộ môn Tự động điều khiển, Khoa Điện – Điện tử, Trường Đại học Tôn Đức Thắng
+                      </h3>
+                 </div>
+              </div>
+            </div>
+        <!-- end header -->
+    <div id="wrapper"> 
+        <div id="wrapper-content">
+            <div id="content" border="1">
+            <table class="tableContent" border="1">
+              <tr>
+                <td> 
+                  <div class="nameProduct"> Coca | Stock: {{id_1.stock}} </div>
+                  <div class = "imageProduct">
+                    <a href ="/pickup/plus/item1"><button class="buttonPlus">+</button></a>
+                    <a href="/pickup/plus/item1"><img src ="{{ url_for('static', filename='images/coca.jpg') }}" 
+                                title="Sting" width="auto" height="100px"></a>
+                    <a href ="/pickup/minus/item1"><button class="buttonMinus">-</button></a>
+                  </div>
+                  <div class="fee">5000 VNĐ</div>
+                </td>
+                <td>
+                  <div class="nameProduct"> Pepsi | Stock: {{id_2.stock}}</div>
+                  <div class = "imageProduct" >
+                   <a href ="/pickup/plus/item2"><button class="buttonPlus">+</button></a>
+                   <a href="/pickup/plus/item2"><img src ="{{ url_for('static', filename='images/pepsi.jpg') }}" 
+                                title="pepsi" width="auto" height="100px"></a>
+                   <a href ="/pickup/minus/item2"><button class="buttonMinus">-</button></a>
+                  </div>
+                  <div class="fee">6000 VNĐ</div>
+                </td>
+              </tr>
+              <tr>
+                  <td class="row2">
+                      <div class="nameProduct"> Mì Tôm | Stock: {{id_3.stock}}</div>
+                      <div class = "imageProduct" >
+                         <a href ="/pickup/plus/item3"><button class="buttonPlus">+</button></a>
+                         <a href="/pickup/plus/item3"><img src="{{ url_for('static', filename='images/haohao.jpg') }}"
+                                    title="Mì tôm" width="auto" height="70px"><a/>
+                         <a href ="/pickup/minus/item3"><button class="buttonMinus">-</button></a>
+                      </div>
+                      <div class="fee">3000 VNĐ</div>
+                  </td>
+              </tr>
+            </table>
+            </div>
+            <table class="payment" border="1">
+                <td>
+                    <table class="paymentTable">
+                        <thead>
+                            <h1>Thanh Toán</h1>
+                            <tr class="headPaymentTable">
+                                <th class="name">Tên sản phẩm</th>
+                                <th class="quantity">Số lượng </th>
+                                <th class= "price">Đơn giá</th>
+                                <th class= "total">Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="item1">
+                                <td class="product">{{slot_1.name}}</td>
+                                <td class="productQuantity">{{slot_1.quantity}}</td>
+                                <td class="productCount">{{slot_1.price}}</td>
+                                <td class="productTotal">{{slot_1.total}}</td>
+                            </tr>
+                            <tr id="item2">
+                                <td class="product">{{slot_2.name}}</td>
+                                <td class="productQuantity">{{slot_2.quantity}}</td>
+                                 <td class="productCount">{{slot_2.price}}</td>
+                                 <td class="productTotal">{{slot_2.total}}</td>
+                          </tr>
+                          <tr id="item3">
+                                <td class="product">{{slot_3.name}}</td>
+                                <td class="productQuantity">{{slot_3.quantity}}</td>
+                                <td class="productCount">{{slot_3.price}}</td>
+                                <td class="productTotal">{{slot_3.total}}</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr class="subTotalTable">
+                            <th>Tổng</th>
+                            <td class="subQuantity">{{subQuantity}}</td>
+                            <td></td>
+                            <td class="subTotal">{{subTotal}}</td>
+                          </tr>
+                        </tfoot>
+                        </div>
+                       </table>
+                       </td>
+                    <td>
+                        <a href="/stock"><img src ="{{ url_for('static', filename='images/stock.png') }}" 
+                                title="stock" width="auto" height="50px"></a>  
+                      <p class= "buttonPayCancel" >
+                          <a href="/pay" title="Link"><button class="payButton">Thanh Toán</button></a>
+                          <a href ="/"><button class="buttonCancel">Huỷ</button></a>
+                      </p>
+                     </td>
+                </table>
+           </div>
+        </div>
+        <!-- end wrapper-content -->
+        <div id="footer">
+        </div>
+        <!-- end footer -->
+    </div>
+    <!-- end wrapper -->
+</body>
+</html>
